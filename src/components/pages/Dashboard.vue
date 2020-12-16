@@ -67,6 +67,7 @@ export default {
     },
   },
   updated() {
+    console.log("token", this.token)
     if (!this.token) {
       this.doLogout()
     }

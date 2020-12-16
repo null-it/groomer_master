@@ -53,8 +53,7 @@ export default {
       }
     },
     checkUser() {
-      // let user = JSON.parse(localStorage.getItem('user') || "{}") // ????
-      let user = this.$store.state.user
+      let user = this.$store.state.user || JSON.parse(localStorage.getItem('user') || "{}")
       if (!user?.id && this.$route.name !== 'login') {
         this.$router.push({name: 'login'}).catch(() => {})
       } else {
@@ -62,7 +61,8 @@ export default {
       }
     },
     checkBearer() {
-      let localBearer = localStorage.getItem('bearer') ?? ""
+      let localBearer = localStorage.getItem('bearer') || ""
+      console.log(localBearer)
       if (localBearer.length > 0) {
         this.$store.commit("setBearer", localBearer)
       }
@@ -72,7 +72,8 @@ export default {
 
     },
     goRedirect: function () {
-      let token = this.$store.bearer
+
+      let token = this.$store.state.bearer
 
       if (token === null) {
         switch (this.$route.name) {

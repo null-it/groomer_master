@@ -1,10 +1,20 @@
 <template>
-$END$
+  <orders-create-form
+      v-on:pageReload="listUpdated"
+  ></orders-create-form>
 </template>
 
 <script>
+import OrdersCreateForm from "@/components/blocks/orders/OrdersCreateForm";
+
 export default {
-name: "NewOrder"
+  name: "NewOrder",
+  components: {OrdersCreateForm},
+  methods: {
+    listUpdated(){
+      this.$router.push({name: 'orders'})
+    }
+  }
 }
 </script>
 

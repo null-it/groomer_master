@@ -104,7 +104,6 @@ export default {
 
       apiInstance.oauthMeGet((error, data, response) => {
         if (error) {
-          console.log(error)
           this.$store.commit("alertAdd", {
             text: this.$t('app.messages.login.cantGetUser'),
             shown: true,

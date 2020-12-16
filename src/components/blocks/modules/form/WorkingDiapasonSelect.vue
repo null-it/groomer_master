@@ -1,6 +1,6 @@
 <template>
-  <v-sheet  color="" tile>
-    <w-d-select v-model="wd" :master_id="master.id"></w-d-select>
+  <v-sheet  color="" tile v-if="master">
+    <w-d-select  v-model="wd" :master_id="master.id"></w-d-select>
   </v-sheet>
 </template>
 
@@ -19,8 +19,13 @@ export default {
     master: null,
     wd: null
   }),
+  computed:{
+    user(){
+      return this.$store.state.user
+    }
+  },
   mounted() {
-    this.master = this.$store.state.user
+    this.master = this.user
     if (this.value) {
       this.wd = this.value
     }
@@ -28,12 +33,16 @@ export default {
   watch: {
     wd:{
       handler(newVal, oldVal) {
-        console.log(newVal, oldVal)
         if ((!oldVal && newVal) || (newVal.id !== oldVal.id)) {
           this.$emit('input', newVal)
         }
       },
       deep: true
+    },
+    user(newVal){
+      if(newVal?.id){
+        this.master = this.user
+      }
     }
   }
 }

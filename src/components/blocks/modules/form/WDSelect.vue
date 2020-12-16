@@ -174,7 +174,6 @@ export default {
           if(this.value){
             this.selectedDay = this.formatDate(this.value.time_start, 'yyyy-MM-dd')
             this.selectedWD = this.value
-
           }
           this.overlay = false
 

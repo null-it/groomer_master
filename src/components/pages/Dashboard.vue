@@ -10,7 +10,7 @@
       <v-spacer></v-spacer>
       <add-item-button-with-popup color="white" v-if="$store.state.user">
         <template v-slot:item>
-          Add Order
+          {{ $t('app.pages.orders.addItem')}}
         </template>
 
 
@@ -20,7 +20,7 @@
       </add-item-button-with-popup>
       <add-item-button-with-popup color="white" v-if="$store.state.user">
         <template v-slot:item>
-          Edit profile
+          {{ $t('app.base.editProfile')}}
         </template>
 
 
@@ -28,7 +28,7 @@
           <masters-edit-form :id="$store.state.user.id"></masters-edit-form>
         </template>
       </add-item-button-with-popup>
-      <v-btn rounded @click="doLogout" class="mx-2">Logout</v-btn>
+      <v-btn rounded @click="doLogout" class="mx-2">{{ $t('app.base.logout')}}</v-btn>
 
     </v-app-bar>
 

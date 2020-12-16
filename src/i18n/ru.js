@@ -6,6 +6,8 @@ let ru = {
             update: 'Обновить',
             delete: 'Удалить',
             find_me: 'Найти меня на карте',
+            logout: "Выход",
+            editProfile: "Редактировать профиль",
             errors: {
                 big_file: 'Файл слишком большой',
                 phone_too_large: 'Слишком длинный номер',
@@ -202,6 +204,8 @@ let ru = {
 
             },
         },
+
+
 
         messages: {
             login: {

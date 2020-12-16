@@ -1,6 +1,6 @@
 <template>
-  <v-sheet  color="" tile v-if="master">
-    <w-d-select  v-model="wd" :master_id="master.id"></w-d-select>
+  <v-sheet  color="" tile v-if="this.user">
+    <w-d-select  v-model="wd" :master_id="this.user.id"></w-d-select>
   </v-sheet>
 </template>
 

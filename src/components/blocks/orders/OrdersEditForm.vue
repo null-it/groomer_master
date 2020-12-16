@@ -130,7 +130,7 @@ export default {
           //костыль для услуг
           //todo:переделать нормально
           this.fields.services.value = response.body.response.services
-          //console.log(this.fields.services.value)
+
 
           this.$store.commit('alertAdd', {
             shown: true,

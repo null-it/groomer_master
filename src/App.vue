@@ -62,7 +62,6 @@ export default {
     },
     checkBearer() {
       let localBearer = localStorage.getItem('bearer') || ""
-      console.log(localBearer)
       if (localBearer.length > 0) {
         this.$store.commit("setBearer", localBearer)
       }

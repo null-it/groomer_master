@@ -58,7 +58,6 @@ export default {
       this.field.someError = [];
     },
     fetch() {
-      // console.log(this)
       let defaultClient = ApiClient.instance;
       let apiInstance = new ServiceApi();
       let bearerAuth = defaultClient.authentications['bearerAuth'];
